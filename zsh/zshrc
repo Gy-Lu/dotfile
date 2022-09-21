@@ -1,4 +1,4 @@
-ANTIGEN="$HOME/.dotfile/antigen.zsh"
+ANTIGEN="$HOME/dotfile/zsh/antigen.zsh"
 # Load local bash/zsh compatible settings
 INIT_SH_NOFUN=1
 INIT_SH_NOLOG=1
@@ -155,28 +155,8 @@ zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dl
 zstyle ':completion:*:*sh:*:' tag-order files
 
 
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/Users/lugy/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/Users/lugy/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/lugy/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/Users/lugy/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
 # Initialize command prompt
-function parse_git_branch() {
-    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/on %F{cyan}git:\1%f/p'
-}
 NAME_PROMPT='%F{cyan}# %n%f @ %F{green}%m%f'
 DIR_PROMPT='%B%F{yellow}%0~%f%b'
-TIME_PROMPT='[%*]'
-export PS1="%F{cyan}# %n%f @ %F{green}%m%f in ${DIR_PROMPT} $(parse_git_branch)%F{red}(${CONDA_DEFAULT_ENV})%f ${TIME_PROMPT}"$'\n'"%F{red}$ %f"
+export PS1="%F{cyan}# %n%f @ %F{green}%m%f in ${DIR_PROMPT} %F{red}%f [%*]"$'\n'"%F{red}$ %f"
 
