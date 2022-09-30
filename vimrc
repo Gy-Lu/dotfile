@@ -1,14 +1,4 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Maintainer:
-"       Amir Salihefendic — @amix3k
-"
-" Awesome_version:
-"       Get this config, nice color schemes and lots of plugins!
-"
-"       Install the awesome version from:
-"
-"           https://github.com/amix/vimrc
-"
 " Sections:
 "    -> General
 "    -> VIM user interface
@@ -62,19 +52,15 @@ set so=7
 " Avoid garbled characters in Chinese language windows OS
 let $LANG='en'
 set langmenu=en
-source $VIMRUNTIME/delmenu.vim
-source $VIMRUNTIME/menu.vim
+" source $VIMRUNTIME/delmenu.vim
+" source $VIMRUNTIME/menu.vim
 
 " Turn on the Wild menu
 set wildmenu
 
 " Ignore compiled files
 set wildignore=*.o,*~,*.pyc
-if has("win16") || has("win32")
-    set wildignore+=.git\*,.hg\*,.svn\*
-else
-    set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
-endif
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/.DS_Store
 
 " Always show current position
 set ruler
@@ -124,8 +110,8 @@ if has("gui_macvim")
     autocmd GUIEnter * set vb t_vb=
 endif
 
-" Add a bit extra margin to the left
-set foldcolumn=1
+" I don't like any margin on the left
+set foldcolumn=0
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

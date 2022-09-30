@@ -154,9 +154,10 @@ DISABLE_CORRECTION="true"
 zstyle ':completion:*:complete:-command-:*:*' ignored-patterns '*.pdf|*.exe|*.dll'
 zstyle ':completion:*:*sh:*:' tag-order files
 
-
 # Initialize command prompt
+parse_git_branch() {
+    git branch 2> /dev/null | sed -n -e 's/^\* \(.*\)/ on %F{cyan}\1%f/p'
+}
 NAME_PROMPT='%F{cyan}# %n%f @ %F{green}%m%f'
 DIR_PROMPT='%B%F{yellow}%0~%f%b'
-export PS1="%F{cyan}# %n%f @ %F{green}%m%f in ${DIR_PROMPT} %F{red}%f [%*]"$'\n'"%F{red}$ %f"
-
+export PS1='%F{cyan}# %n%f @ %F{green}%m%f in ${DIR_PROMPT}$(parse_git_branch) %F{red}($CONDA_DEFAULT_ENV)%f [%*]'$'\n''%F{red}$ %f'
