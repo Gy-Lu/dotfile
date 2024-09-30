@@ -1,0 +1,12 @@
+[submodule "vim/bundle/Vundle.vim"]
+	path = vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "vim/bundle/jedi-vim"]
+	path = vim/bundle/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
+	url = https://github.com/preservim/nerdcommenter.git
+[submodule "vim/bundle/LeaderF"]
+	path = vim/bundle/LeaderF
+	url = https://github.com/Yggdroot/LeaderF.git
